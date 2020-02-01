@@ -4,30 +4,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/common.css" rel="stylesheet">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/common.js"></script>
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/common.css" rel="stylesheet">
+    <script src="static/js/jquery.min.js"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/common.js"></script>
     <title>音乐热点</title>
 </head>
 
-<body onload="set_biz_tabs_active()">
+<body onload="load_tabs()">
 
-<div id="music_tabs" class="container">
-    <ul class="row nav nav-tabs">
-        <li class="col-xs-3 active"><a href="#" class="text-center">摇滚</a></li>
-        <li class="col-xs-3"><a href="#" class="text-center">民谣</a></li>
-        <li class="col-xs-3"><a href="#" class="text-center">嘻哈</a></li>
-        <li class="col-xs-3"><a href="#" class="text-center">流行</a></li>
-    </ul>
-</div>
-
-<div id="biz_tabs" class="container">
-    <ul class="row nav nav-tabs">
-        <li class="col-xs-6"><a href="weibo.html" class="text-center"><strong>动 态</strong></a></li>
-        <li class="col-xs-6"><a href="focus.html" class="text-center"><strong>热 点</strong></a></li>
-    </ul>
+<div id="tabs">
+    <!-- load tabs.html -->
 </div>
 
 <div id="weibo_list" class="list-group">
