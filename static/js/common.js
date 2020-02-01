@@ -1,5 +1,5 @@
 function load_tabs() {
-    $("#tabs").load("static/tabs.html", set_biz_tabs_active);
+    $("#tabs").load("html/tabs.html", set_biz_tabs_active);
 }
 
 function set_biz_tabs_active() {

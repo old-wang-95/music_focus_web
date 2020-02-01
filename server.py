@@ -1,17 +1,16 @@
-from flask import Flask, send_file
+from flask import send_file
 
-app = Flask(__name__)
+from driver import app
 
 
-@app.route('/')
 @app.route('/weibo.html')
 def show_weibo():
-    return send_file('weibo.html')
+    return send_file('html/weibo.html')
 
 
 @app.route('/focus.html')
 def show_focus():
-    return send_file('focus.html')
+    return send_file('html/focus.html')
 
 
 if __name__ == '__main__':
