@@ -13,7 +13,7 @@ def call_posts():
         return res.text
     except Exception as e:
         logger.exception(e)
-        return 'error'
+        return 'error: {}'.format(e)
 
 
 @app.route('/api/v1/focuses', methods=['GET'])
@@ -24,4 +24,4 @@ def call_focuses():
         return res.text
     except Exception as e:
         logger.exception(e)
-        return 'error'
+        return 'error: {}'.format(e)
