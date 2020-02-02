@@ -1,3 +1,5 @@
+// 处理标签栏相关
+
 function load_tabs() {
     $("#tabs").load("/static/html/tabs.html", set_biz_tabs_active);
 }
