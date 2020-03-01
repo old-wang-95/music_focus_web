@@ -10,7 +10,7 @@ function render_posts(data) {
     for (let i in data['result']['rock']) {
         i = parseInt(i);
         let item_data = data['result']['rock'][i];
-        let item_html = item_template.replace('{0}', item_data['id']).replace('{1}', item_data['image']);
+        let item_html = item_template.replace('{0}', item_data['id']).replace('{1}', item_data['image_path']);
         items.push(item_html);
     }
 
