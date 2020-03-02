@@ -4,7 +4,7 @@ services:
     environment:
       TZ: Asia/Shanghai
       POSTS_URL: http://127.0.0.1:8000/api/v1/posts
-      FOCUSES_URL: 'http://127.0.0.1:8000/api/v1/focuses
+      FOCUSES_URL: http://127.0.0.1:8000/api/v1/focuses
     ports:
       - 9000:8000
     image: music_focus_web:latest
