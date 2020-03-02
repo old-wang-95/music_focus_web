@@ -2,7 +2,6 @@ import sys
 
 from flask import send_file
 
-from app import logger
 from app.api import *
 
 
