@@ -10,3 +10,4 @@ services:
     image: music_focus_web:latest
     volumes:
       - ../music_focus/data/weibo_images:/music_focus_web/app/static/images/weibo
+      - ./log://music_focus_web/log

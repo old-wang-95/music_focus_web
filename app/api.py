@@ -1,8 +1,8 @@
 import requests
 
 from app import conf
+from app import logger
 from app.driver import app
-from app.driver import logger
 
 
 @app.route('/api/v1/posts', methods=['GET'])
