@@ -10,7 +10,8 @@ function render_focuses(data) {
         "        <span class=\"focus\">{title}</span>\n" +
         "            &nbsp\n" +
         "        <span class=\"hot\">{hot}</span>\n" +
-        "            &nbsp&nbsp&nbsp\n" +
+        "    </h5>\n" +
+        "    <h5 class=\"text-right\">\n" +
         "        <span class=\"users\">{users}</span>\n" +
         "    </h5>\n" +
         "</a>";
@@ -22,7 +23,8 @@ function render_focuses(data) {
         "        <span class=\"focus\">{title}</span>\n" +
         "            &nbsp\n" +
         "        <span class=\"hot\">{hot}</span>\n" +
-        "            &nbsp&nbsp&nbsp\n" +
+        "    </h5>\n" +
+        "    <h5 class=\"text-right\">\n" +
         "        <span class=\"users\">{users}</span>\n" +
         "    </h5>\n" +
         "</a>";
