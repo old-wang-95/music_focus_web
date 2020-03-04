@@ -15,6 +15,16 @@ def show_focus():
     return send_file('html/focus.html')
 
 
+@app.route('/lizhi.html')
+def show_lizhi():
+    return send_file('html/lizhi.html')
+
+
+@app.route('/lizhi/album.html')
+def show_album():
+    return send_file('html/album.html')
+
+
 def start():
     host = '0.0.0.0'
     port = 8000
