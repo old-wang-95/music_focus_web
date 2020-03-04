@@ -1,7 +1,7 @@
 // 处理标签栏相关
 
 function load_tabs() {
-    $("#tabs").load("/static/html/tabs.html", function () {
+    $("#tabs").load("/static/templates/tabs.html", function () {
             const html_name = window.location.pathname.split("/").pop().split("?")[0];
 
             // set biz tabs
