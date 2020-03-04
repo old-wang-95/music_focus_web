@@ -35,3 +35,9 @@ span.users {
 img.album_max_width {
     width: 900px;
 }
+
+/*专辑界面*/
+iframe.max_window {
+    width: 600px;
+    height: 850px;
+}
