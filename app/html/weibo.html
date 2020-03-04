@@ -8,13 +8,12 @@
     <link href="../static/css/common.css" rel="stylesheet">
     <script src="../static/js/jquery.min.js"></script>
     <script src="../static/js/bootstrap.min.js"></script>
-    <script src="../static/js/common.js"></script>
     <script src="../static/js/tabs.js"></script>
     <script src="../static/js/posts.js"></script>
     <title>音乐热点</title>
 </head>
 
-<body onload="load_tabs(); http_get('/api/v1/posts', render_posts)">
+<body onload="load_tabs(); render_posts()">
 
 <div id="tabs">
     <!-- load tabs.html -->
