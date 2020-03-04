@@ -1,8 +1,8 @@
 // 处理热点列表相关
 
 function render_focuses(data) {
-    $.get("/static/templates/top_focus.html", function (top_focus_template) {
-        $.get("/static/templates/focus.html", function (focus_template) {
+    $.get("/static/templates/top_focus_item.html", function (top_focus_template) {
+        $.get("/static/templates/focus_item.html", function (focus_template) {
             let focus_html_list = [];
             jQuery.each(data['result']['rock'], function (i, focus_data) {
                 let focus_html;
