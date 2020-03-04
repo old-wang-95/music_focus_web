@@ -1,19 +1,14 @@
 // 处理微博列表相关
 
 function render_posts(data) {
-    // gen inner html
-    let item_template = "" +
-        "<a class=\"list-group-item\" href=\"https://m.weibo.cn/detail/{0}\">\n" +
-        "    <img src=\"../static/images/weibo/{1}\" alt=\"微博\" class=\"img-thumbnail\">\n" +
-        "</a>";
-    let items = [];
-    for (let i in data['result']['rock']) {
-        i = parseInt(i);
-        let item_data = data['result']['rock'][i];
-        let item_html = item_template.replace('{0}', item_data['id']).replace('{1}', item_data['image_path']);
-        items.push(item_html);
-    }
-
-    // replace
-    document.getElementById('weibo_list').innerHTML = items.join('\n');
+    $.get("/static/templates/post_item.html", function (post_template) {
+        let post_html_list = [];
+        $.each(data['result']['rock'], function (i, post_data) {
+            let item_html = post_template
+                .replace('{id}', post_data['id'])
+                .replace('{image_path}', post_data['image_path']);
+            post_html_list.push(item_html);
+        });
+        document.getElementById('weibo_list').innerHTML = post_html_list.join('\n');
+    });
 }
