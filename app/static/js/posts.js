@@ -8,7 +8,9 @@ function render_posts() {
                 let item_html = post_template
                     .replace('{id}', post_data['id'])
                     .replace('{image_path}', post_data['image_path']);
-                post_html_list.push(item_html);
+                if (post_data['recent_read'] !== 0) {
+                    post_html_list.push(item_html);
+                }
             });
             document.getElementById('weibo_list').innerHTML = post_html_list.join('\n');
         });
