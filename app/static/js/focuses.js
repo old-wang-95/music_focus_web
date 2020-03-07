@@ -12,7 +12,9 @@ function render_focuses() {
                     } else {
                         focus_html = template2html(focus_template, focus_data, i);
                     }
-                    focus_html_list.push(focus_html);
+                    if (focus_data['recent_read'] !== 0) {
+                        focus_html_list.push(focus_html);
+                    }
                 });
                 document.getElementById('focus_list').innerHTML = focus_html_list.join('\n');
             });
