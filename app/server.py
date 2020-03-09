@@ -1,8 +1,15 @@
 import sys
 
+from flask import request
 from flask import send_file
 
 from app.api import *
+
+
+@app.route('/')
+def index():
+    logger.debug(request.headers)
+    return ''
 
 
 @app.route('/weibo.html')
