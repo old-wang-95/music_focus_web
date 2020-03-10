@@ -3,6 +3,7 @@ import sys
 from flask import redirect, send_file
 
 from app.api import *
+from app.driver import visit_history
 from app.request_handler import RequestHandler
 
 
@@ -13,21 +14,25 @@ def index():
 
 @app.route('/weibo.html')
 def show_weibo():
+    visit_history.write('/weibo.html')
     return send_file('html/weibo.html')
 
 
 @app.route('/focus.html')
 def show_focus():
+    visit_history.write('/focus.html')
     return send_file('html/focus.html')
 
 
 @app.route('/lizhi.html')
 def show_lizhi():
+    visit_history.write('/lizhi.html')
     return send_file('html/lizhi.html')
 
 
 @app.route('/lizhi/album.html')
 def show_album():
+    visit_history.write('/lizhi/album.html')
     return send_file('html/album.html')
 
 
