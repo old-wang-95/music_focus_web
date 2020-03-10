@@ -23,6 +23,7 @@ class VisitHistory:
             ip = request.headers.get('X-Real-Ip', request.remote_addr)
             dt = datetime.now().strftime('%Y/%m/%d-%H:%M:%S')
             f.write('\t'.join([dt, ip, url]) + '\n')
+            self._update_cnt(ip)
 
     def load(self):
         if not os.path.exists(self.file_path):
@@ -33,7 +34,10 @@ class VisitHistory:
                 if not line:
                     continue
                 dt, ip, url = line.split('\t')[:3]
-                self.visit_cnt += 1
-                if ip not in self.visitors:
-                    self.visitor_cnt += 1
-                    self.visitors.add(ip)
+                self._update_cnt(ip)
+
+    def _update_cnt(self, ip):
+        self.visit_cnt += 1
+        if ip not in self.visitors:
+            self.visitor_cnt += 1
+            self.visitors.add(ip)
