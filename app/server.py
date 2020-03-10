@@ -9,7 +9,7 @@ from app.request_handler import RequestHandler
 
 @app.route('/')
 def index():
-    redirect(url_for('weibo.html'))
+    return redirect('/weibo.html')
 
 
 @app.route('/weibo.html')
