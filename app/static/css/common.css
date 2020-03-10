@@ -41,3 +41,11 @@ iframe.max_window {
     width: 600px;
     height: 850px;
 }
+
+/*底部按钮*/
+.bottom_buttons {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+}

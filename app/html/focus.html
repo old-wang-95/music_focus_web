@@ -12,10 +12,11 @@
     <script src="../static/js/tabs.js"></script>
     <script src="../static/js/focuses.js"></script>
     <script src="../static/js/loading.js"></script>
+    <script src="../static/js/bottom_buttons.js"></script>
     <title>音乐热点</title>
 </head>
 
-<body onload="load_tabs(); loading('focus_list'); render_focuses()">
+<body onload="load_tabs(); loading('focus_list'); render_focuses(); load_bottom();">
 
 <div id="tabs">
     <!-- load tabs.html -->
@@ -23,6 +24,10 @@
 
 <div id="focus_list" class="list-group text-center">
     <!-- load focuses -->
+</div>
+
+<div id="bottom_buttons">
+    <!-- load bottom -->
 </div>
 
 </body>
