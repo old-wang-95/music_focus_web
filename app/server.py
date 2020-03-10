@@ -1,3 +1,4 @@
+import json
 import sys
 
 from flask import redirect, send_file
@@ -34,6 +35,15 @@ def show_lizhi():
 def show_album():
     visit_history.write('/lizhi/album.html')
     return send_file('html/album.html')
+
+
+@app.route('/visit_cnt')
+def show_visit_cnt():
+    result = {
+        'visit_cnt': visit_history.visit_cnt,
+        'visitor_cnt': visit_history.visitor_cnt
+    }
+    return json.dumps(result, ensure_ascii=False, indent=2)
 
 
 def start():
