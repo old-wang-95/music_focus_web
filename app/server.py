@@ -1,15 +1,15 @@
 import sys
 
-from flask import request
+from flask import redirect, url_for
 from flask import send_file
 
 from app.api import *
+from app.request_handler import RequestHandler
 
 
 @app.route('/')
 def index():
-    logger.debug(request.headers)
-    return ''
+    redirect(url_for('weibo.html'))
 
 
 @app.route('/weibo.html')
@@ -39,7 +39,7 @@ def start():
         host, port = sys.argv[1:3]
     if conf.is_debug:
         logger.warning('current is debug mode')
-    app.run(host=host, port=port, debug=conf.is_debug)
+    app.run(host=host, port=port, debug=conf.is_debug, request_handler=RequestHandler)
 
 
 if __name__ == '__main__':
