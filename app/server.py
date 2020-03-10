@@ -1,7 +1,6 @@
 import sys
 
-from flask import redirect, url_for
-from flask import send_file
+from flask import redirect, send_file
 
 from app.api import *
 from app.request_handler import RequestHandler
