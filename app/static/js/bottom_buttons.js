@@ -4,7 +4,7 @@ function load_bottom() {
 
 function share() {
     $.get('/static/templates/share_mask.html', function (share_mask_html) {
-        $("body").prepend(share_mask_html);
+        $("body").append(share_mask_html);
     });
 }
 
