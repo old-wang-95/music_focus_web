@@ -1,6 +1,7 @@
 function load_bottom() {
     $('#bottom_buttons').load('/static/templates/bottom_buttons.html');
     register_feedback();
+    register_subscribe();
 }
 
 
@@ -37,7 +38,16 @@ function submit_feedback() {
     $("#feedback").modal("hide");
 }
 
-/* subscribe相关 */
-function subscribe() {
 
+/* subscribe相关 */
+function register_subscribe() {
+    $.get('/static/templates/subscribe.html', function (subscribe_html) {
+        $("body").append(subscribe_html);
+        $('#subscribe').on('show.bs.modal', function () {
+            let $this = $(this);
+            let $modal_dialog = $this.find('.modal-dialog');
+            $this.css('display', 'block');
+            $modal_dialog.css({'margin-top': Math.max(0, ($(window).height() - $modal_dialog.height()) / 2)});
+        });
+    })
 }
