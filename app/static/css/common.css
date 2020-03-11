@@ -49,3 +49,31 @@ iframe.max_window {
     right: 0;
     bottom: 10px;
 }
+
+/*分享mask*/
+.share_mask {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .6);
+}
+.share_arrow {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+    background-image: url(/static/images/arrow.png);
+    background-size: 100% 100%;
+}
+.share_text {
+    position: absolute;
+    top: 170px;
+    right: 140px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 20px;
+}
