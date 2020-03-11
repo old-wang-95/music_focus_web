@@ -32,7 +32,7 @@ def call_focuses():
         return 'error: {}'.format(e)
 
 
-@app.route('/api/v1/visit_cnt')
+@app.route('/api/v1/visit_cnt', methods=["GET"])
 def show_visit_cnt():
     result = {
         'visit_cnt': visit_history.visit_cnt,
