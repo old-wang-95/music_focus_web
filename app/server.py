@@ -1,9 +1,7 @@
-import json
 import sys
 
-from flask import redirect, send_file, request
+from flask import redirect, send_file
 
-from app import driver
 from app.api import *
 from app.driver import visit_history
 from app.request_handler import RequestHandler
@@ -36,26 +34,6 @@ def show_lizhi():
 def show_album():
     visit_history.write('/lizhi/album.html')
     return send_file('html/album.html')
-
-
-@app.route('/api/v1/visit_cnt')
-def show_visit_cnt():
-    result = {
-        'visit_cnt': visit_history.visit_cnt,
-        'visitor_cnt': visit_history.visitor_cnt
-    }
-    return json.dumps(result, ensure_ascii=False, indent=2)
-
-
-@app.route('/api/v1/feedback', methods=["POST"])
-def feedback():
-    try:
-        with open(driver.feedback_path, 'a', encoding='utf-8') as f:
-            f.write(json.dumps(request.form, ensure_ascii=False) + '\n')
-        return 'OK'
-    except Exception as e:
-        logger.exception(e)
-        return 'ERROR'
 
 
 def start():
