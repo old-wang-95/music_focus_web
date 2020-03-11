@@ -9,8 +9,10 @@ from app import logger
 from app.driver import app
 from app.driver import visit_history
 
+API_VERSION = 'v1'
 
-@app.route('/api/v1/posts', methods=['GET'])
+
+@app.route('/api/{}/posts'.format(API_VERSION), methods=['GET'])
 def call_posts():
     try:
         res = requests.get(conf.posts_url)
@@ -21,7 +23,7 @@ def call_posts():
         return 'error: {}'.format(e)
 
 
-@app.route('/api/v1/focuses', methods=['GET'])
+@app.route('/api/{}/focuses'.format(API_VERSION), methods=['GET'])
 def call_focuses():
     try:
         res = requests.get(conf.focuses_url)
@@ -32,7 +34,7 @@ def call_focuses():
         return 'error: {}'.format(e)
 
 
-@app.route('/api/v1/visit_cnt', methods=["GET"])
+@app.route('/api/{}/visit_cnt'.format(API_VERSION), methods=["GET"])
 def show_visit_cnt():
     result = {
         'visit_cnt': visit_history.visit_cnt,
@@ -41,7 +43,7 @@ def show_visit_cnt():
     return json.dumps(result, ensure_ascii=False, indent=2)
 
 
-@app.route('/api/v1/feedback', methods=["POST"])
+@app.route('/api/{}/feedback'.format(API_VERSION), methods=["POST"])
 def feedback():
     try:
         with open(driver.feedback_path, 'a', encoding='utf-8') as f:
