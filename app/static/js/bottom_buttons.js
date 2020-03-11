@@ -34,7 +34,15 @@ function register_feedback() {
 function submit_feedback() {
     let wx_id = $("#wx_id")[0].value;
     let feedback_content = $("#feedback_content")[0].value;
-    //TODO
+    if (feedback_content.trim() === '') {
+        alert("反馈内容不能为空！");
+        return
+    }
+    let data = {
+        'name': wx_id.trim(),
+        'content': feedback_content.trim()
+    };
+    $.post('/api/v1/feedback', data);
     $("#feedback").modal("hide");
 }
 
