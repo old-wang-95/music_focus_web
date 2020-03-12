@@ -77,3 +77,16 @@ iframe.max_window {
     font-weight: 500;
     font-size: 20px;
 }
+
+/*反馈模态框*/
+label.feedback_label {
+    margin-left: 10px;
+}
+input.feedback_input {
+    margin-left: 8px;
+    width: 200px;
+}
+textarea.feedback_textarea {
+    margin-left: 8px;
+    width: 350px;
+}

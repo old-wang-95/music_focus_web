@@ -8,25 +8,13 @@
 
             <div class="modal-body">
                 <form id="feedback_form" class="form-horizontal" role="form">
-                    <div class="form-group container">
-                        <div class="row">
-                            <label for="wx_id" class="col-xs-6 control-label">微信/电话/邮箱</label>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-6">
-                                <input id="wx_id" type="text" class="form-control" placeholder="可不填">
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="wx_id" class="control-label feedback_label">微信/电话/邮箱</label>
+                        <input id="wx_id" type="text" class="form-control feedback_input" placeholder="可不填">
                     </div>
-                    <div class="form-group container">
-                        <div class="row">
-                            <label for="feedback_content" class="col-xs-2 control-label">内容</label>
-                        </div>
-                        <div class="row">
-                            <div class="col-xs-12">
-                                <textarea id="feedback_content" class="form-control" rows="3"></textarea>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="feedback_content" class="control-label feedback_label">内容</label>
+                        <textarea id="feedback_content" class="form-control feedback_textarea" rows="4"></textarea>
                     </div>
                 </form>
             </div>
