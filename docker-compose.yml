@@ -5,6 +5,7 @@ services:
       TZ: Asia/Shanghai
       POSTS_URL: http://172.19.90.33:8000/api/v1/posts
       FOCUSES_URL: http://172.19.90.33:8000/api/v1/focuses
+      VIDEOS_URL:  http://172.19.90.33:8000/api/v1/videos
     ports:
       - 9000:8000
     image: music_focus_web:latest

@@ -34,6 +34,17 @@ def call_focuses():
         return 'error: {}'.format(e)
 
 
+@app.route('/api/{}/videos'.format(API_VERSION), methods=['GET'])
+def call_videos():
+    try:
+        res = requests.get(conf.videos_url)
+        assert res.status_code == 200, "status_code is: {}, not 200!".format(res.status_code)
+        return res.text
+    except Exception as e:
+        logger.exception(e)
+        return 'error: {}'.format(e)
+
+
 @app.route('/api/{}/visit_cnt'.format(API_VERSION), methods=["GET"])
 def show_visit_cnt():
     result = {
