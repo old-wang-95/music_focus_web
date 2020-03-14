@@ -6,7 +6,8 @@ function render_videos() {
             let video_html_list = [];
             $.each(data['result']['rock'], function (i, video_data) {
                 let item_html = video_template
-                    .replace('{url}', video_data['url']);
+                    .replace('{url}', video_data['url'])
+                    .replace('{cover_path}', video_data['cover_path']);
                 video_html_list.push(item_html);
             });
             document.getElementById('video_list').innerHTML = video_html_list.join('\n');
