@@ -9,6 +9,8 @@ function load_tabs() {
                 document.getElementById("biz_tabs").getElementsByTagName("li").item(0).classList.add("active");
             } else if (html_name === "focus.html") {
                 document.getElementById("biz_tabs").getElementsByTagName("li").item(1).classList.add("active");
+            } else if (html_name === "video.html") {
+                document.getElementById("biz_tabs").getElementsByTagName("li").item(2).classList.add("active");
             } else if (html_name === "lizhi.html" || html_name === "album.html") {
                 document.getElementById("biz_tabs").innerHTML = '';
             }

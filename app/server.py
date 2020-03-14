@@ -24,6 +24,12 @@ def show_focus():
     return send_file('html/focus.html')
 
 
+@app.route('/video.html')
+def show_video():
+    visit_history.write('/video.html')
+    return send_file('html/video.html')
+
+
 @app.route('/lizhi.html')
 def show_lizhi():
     visit_history.write('/lizhi.html')
