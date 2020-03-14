@@ -1,3 +1,8 @@
+img.center {
+    margin: auto;
+}
+
+
 /*热点界面*/
 span.no-top {
     color: #ff1d40;
@@ -32,19 +37,12 @@ span.users {
 }
 
 
-/*李志界面*/
-img.center {
-    margin: auto;
-}
-
-
 /*专辑界面*/
 iframe.album_iframe {
     width: 600px;
     height: 850px;
     margin: auto;
 }
-
 
 
 /*底部按钮*/
