@@ -31,16 +31,19 @@ span.users {
     font-weight: normal;
 }
 
+
 /*李志界面*/
 img.album_max_width {
     width: 2000px;
 }
+
 
 /*专辑界面*/
 iframe.max_window {
     width: 600px;
     height: 850px;
 }
+
 
 /*底部按钮*/
 .bottom_buttons {
@@ -49,6 +52,7 @@ iframe.max_window {
     right: 0;
     bottom: 10px;
 }
+
 
 /*分享mask*/
 .share_mask {
@@ -60,6 +64,7 @@ iframe.max_window {
     z-index: 1;
     background-color: rgba(0, 0, 0, .6);
 }
+
 .share_arrow {
     position: absolute;
     top: 20px;
@@ -69,6 +74,7 @@ iframe.max_window {
     background-image: url(/static/images/arrow.png);
     background-size: 100% 100%;
 }
+
 .share_text {
     position: absolute;
     top: 170px;
@@ -78,15 +84,32 @@ iframe.max_window {
     font-size: 20px;
 }
 
+
 /*反馈模态框*/
 label.feedback_label {
     margin-left: 10px;
 }
+
 input.feedback_input {
     margin-left: 8px;
     width: 200px;
 }
+
 textarea.feedback_textarea {
     margin-left: 8px;
     width: 350px;
+}
+
+
+/*视频*/
+video.video_center {
+    margin: auto
+}
+
+.video_user_name {
+    font-size: larger;
+}
+
+.video_view_cnt {
+    color: #8c8c8c
 }

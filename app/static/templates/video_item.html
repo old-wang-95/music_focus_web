@@ -1,5 +1,10 @@
-<div class="embed-responsive embed-responsive-16by9">
-    <video class="list-group-item embed-responsive-item" controls poster="/static/images/video_cover/{cover_path}">
+<div class="list-group-item">
+    <div class="col-xs-12 text-center">
+        <strong class="video_user_name">{user_name} </strong>
+        <span class="video_view_cnt">{display_view_cnt}</span>
+    </div>
+    <video id="video" class="img-responsive video_center" controls poster="/static/images/video_cover/{cover_path}"
+           style="">
         <source src="{url}" type="video/mp4">
         视频
     </video>
