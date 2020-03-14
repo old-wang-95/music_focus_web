@@ -33,16 +33,18 @@ span.users {
 
 
 /*李志界面*/
-img.album_max_width {
-    width: 2000px;
+img.center {
+    margin: auto;
 }
 
 
 /*专辑界面*/
-iframe.max_window {
+iframe.album_iframe {
     width: 600px;
     height: 850px;
+    margin: auto;
 }
+
 
 
 /*底部按钮*/
