@@ -1,19 +1,22 @@
 // 处理热点列表相关
 
 function render_focuses() {
+    let max_num = 50;
     $.getJSON("/api/v1/focuses", function (data) {
         $.get("/static/templates/top_focus_item.html", function (top_focus_template) {
             $.get("/static/templates/focus_item.html", function (focus_template) {
                 let focus_html_list = [];
                 jQuery.each(data['result']['rock'], function (i, focus_data) {
-                    let focus_html;
-                    if (i + 1 <= 3) {
-                        focus_html = template2html(top_focus_template, focus_data, i);
-                    } else {
-                        focus_html = template2html(focus_template, focus_data, i);
-                    }
-                    if (focus_data['recent_read'] !== 0) {
-                        focus_html_list.push(focus_html);
+                    if (i < max_num) {
+                        let focus_html;
+                        if (i + 1 <= 3) {
+                            focus_html = template2html(top_focus_template, focus_data, i);
+                        } else {
+                            focus_html = template2html(focus_template, focus_data, i);
+                        }
+                        if (focus_data['recent_read'] !== 0) {
+                            focus_html_list.push(focus_html);
+                        }
                     }
                 });
                 document.getElementById('focus_list').innerHTML = focus_html_list.join('\n');
