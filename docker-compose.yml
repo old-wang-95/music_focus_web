@@ -12,5 +12,5 @@ services:
     volumes:
       - ../music_focus/data/weibo_images:/music_focus_web/app/static/images/weibo
       - ../music_focus/data/video_covers:/music_focus_web/app/static/images/video_cover
-      - ./log://music_focus_web/log
+      - ./log:/music_focus_web/log
     restart: always
