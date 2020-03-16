@@ -50,8 +50,8 @@ function click_music_type(cur_ele) {
 
     let biz_type = "weibo";
     let cur_biz_li = $("#biz_tabs").find("li.active");
-    if (cur_biz_li.length !== 0){
-         biz_type = transform_text(cur_biz_li[0].innerText);
+    if (cur_biz_li.length !== 0) {
+        biz_type = transform_text(cur_biz_li[0].innerText);
     }
 
     window.location = window.location.origin + "/" + biz_type + ".html?music_type=" + music_type;
@@ -66,7 +66,7 @@ function click_biz_type(cur_ele) {
 
 
 function transform_text(cn_text) {
-    cn_text = cn_text.replace(' ', '');
+    cn_text = cn_text.replace(' ', '').replace('\n', '');
     switch (cn_text) {
         case "摇滚":
             return "rock";
