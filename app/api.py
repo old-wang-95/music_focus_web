@@ -14,35 +14,17 @@ API_VERSION = 'v1'
 
 @app.route('/api/{}/posts'.format(API_VERSION), methods=['GET'])
 def call_posts():
-    try:
-        res = requests.get(conf.posts_url)
-        assert res.status_code == 200, "status_code is: {}, not 200!".format(res.status_code)
-        return res.text
-    except Exception as e:
-        logger.exception(e)
-        return 'error: {}'.format(e)
+    return _call_biz(conf.posts_url, 50)
 
 
 @app.route('/api/{}/focuses'.format(API_VERSION), methods=['GET'])
 def call_focuses():
-    try:
-        res = requests.get(conf.focuses_url)
-        assert res.status_code == 200, "status_code is: {}, not 200!".format(res.status_code)
-        return res.text
-    except Exception as e:
-        logger.exception(e)
-        return 'error: {}'.format(e)
+    return _call_biz(conf.focuses_url, 50)
 
 
 @app.route('/api/{}/videos'.format(API_VERSION), methods=['GET'])
 def call_videos():
-    try:
-        res = requests.get(conf.videos_url)
-        assert res.status_code == 200, "status_code is: {}, not 200!".format(res.status_code)
-        return res.text
-    except Exception as e:
-        logger.exception(e)
-        return 'error: {}'.format(e)
+    return _call_biz(conf.videos_url, 30)
 
 
 @app.route('/api/{}/visit_cnt'.format(API_VERSION), methods=["GET"])
@@ -63,3 +45,13 @@ def feedback():
     except Exception as e:
         logger.exception(e)
         return 'ERROR'
+
+
+def _call_biz(url, max_cnt):
+    try:
+        res = requests.get(url, params=dict(request.args, max_cnt=max_cnt))
+        assert res.status_code == 200, "status_code is: {}, not 200!".format(res.status_code)
+        return res.text
+    except Exception as e:
+        logger.exception(e)
+        return 'error: {}'.format(e)

@@ -1,6 +1,6 @@
 import sys
 
-from flask import redirect, send_file
+from flask import redirect, send_file, render_template
 
 from app.api import *
 from app.driver import visit_history
@@ -9,25 +9,22 @@ from app.request_handler import RequestHandler
 
 @app.route('/')
 def index():
-    return redirect('/weibo.html')
+    return redirect('/weibo.html?music_type=rock')
 
 
 @app.route('/weibo.html')
 def show_weibo():
-    visit_history.write('/weibo.html')
-    return send_file('html/weibo.html')
+    return _show_biz('weibo.html')
 
 
 @app.route('/focus.html')
 def show_focus():
-    visit_history.write('/focus.html')
-    return send_file('html/focus.html')
+    return _show_biz('focus.html')
 
 
 @app.route('/video.html')
 def show_video():
-    visit_history.write('/video.html')
-    return send_file('html/video.html')
+    return _show_biz('video.html')
 
 
 @app.route('/lizhi.html')
@@ -40,6 +37,13 @@ def show_lizhi():
 def show_album():
     visit_history.write('/lizhi/album.html')
     return send_file('html/album.html')
+
+
+def _show_biz(html_name):
+    visit_history.write('/' + html_name)
+    if 'music_type' not in request.args:
+        return 'error'
+    return render_template(html_name, music_type=request.args['music_type'])
 
 
 def start():
