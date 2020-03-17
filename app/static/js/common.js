@@ -1,9 +1,9 @@
-function scroll_load(list_dom, list_data, item_template, template_func) {
-    list_dom.innerHTML = '';
+function scroll_load(list_element, list_data, item_template, template_func) {
+    list_element.innerHTML = '';
     let index = 0;
     render_items(15);
     $(document).scroll(function () {
-        if ($(document).scrollTop() + $(window).height() === $(document).height()) {
+        if ($(document).height() - $(document).scrollTop() - $(window).height() < 100) {
             render_items(5);
         }
     });
@@ -12,7 +12,9 @@ function scroll_load(list_dom, list_data, item_template, template_func) {
         while (list_data.length > 0 && item_size > 0) {
             let item_data = list_data.shift();
             let item_html = template_func(item_template, item_data, index);
-            list_dom.innerHTML += item_html;
+            let item_element = document.createElement("div");
+            item_element.innerHTML = item_html;
+            list_element.appendChild(item_element);
             item_size--;
             index++;
         }
