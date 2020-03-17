@@ -8,7 +8,7 @@ function load_album() {
                     current_album_data = album_data;
                 }
             });
-            document.getElementById("album").innerHTML = album_template
+            $("#album")[0].innerHTML = album_template
                 .replace("{bandcamp_id}", current_album_data["bandcamp_id"])
                 .replace("{en_name}", current_album_data["en_name"])
                 .replace("{name}", current_album_data["name"]);

@@ -12,7 +12,7 @@ function render_videos(music_type) {
                     .replace('{display_view_cnt}', video_data['display_view_cnt']);
                 video_html_list.push(item_html);
             });
-            document.getElementById('video_list').innerHTML = video_html_list.join('\n');
+            $("#video_list")[0].innerHTML = video_html_list.join('\n');
         });
     });
 }

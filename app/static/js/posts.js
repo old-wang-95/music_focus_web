@@ -10,7 +10,7 @@ function render_posts(music_type) {
                     .replace('{image_path}', post_data['image_path']);
                 post_html_list.push(item_html);
             });
-            document.getElementById('weibo_list').innerHTML = post_html_list.join('\n');
+            $("#weibo_list")[0].innerHTML = post_html_list.join('\n');
         });
     });
 }

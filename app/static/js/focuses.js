@@ -16,7 +16,7 @@ function render_focuses(music_type) {
                         focus_html_list.push(focus_html);
                     }
                 });
-                document.getElementById('focus_list').innerHTML = focus_html_list.join('\n');
+                $("#focus_list")[0].innerHTML = focus_html_list.join('\n');
             });
         });
     });

@@ -9,7 +9,7 @@ function load_albums() {
                     .replace('{name}', album_data['name']);
                 album_html_list.push(album_html);
             });
-            document.getElementById('album_list').innerHTML = album_html_list.join('\n');
+            $("#album_list")[0].innerHTML = album_html_list.join('\n');
         });
     });
 }
