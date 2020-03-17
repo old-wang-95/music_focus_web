@@ -3,7 +3,7 @@ function scroll_load(list_element, list_data, item_template, template_func) {
     let index = 0;
     render_items(15);
     $(document).scroll(function () {
-        if ($(document).height() - $(document).scrollTop() - $(window).height() < 100) {
+        if ($(document).height() - $(document).scrollTop() - $(window).height() < 300) {
             render_items(5);
         }
     });
