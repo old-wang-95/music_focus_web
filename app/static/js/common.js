@@ -1,9 +1,7 @@
 function scroll_load(list_element, list_data, item_template, template_func) {
     list_element.innerHTML = '';
     let index = 0;
-    while ($(window).height() > $("body").height()) {  // 渲染到满屏
-        render_items(5);
-    }
+    render_items(10);
     $(document).scroll(function () {
         if ($("body").height() - $(document).scrollTop() - $(window).height() < 300) {  // 滑动到距底部300像素时再加载
             render_items(5);
