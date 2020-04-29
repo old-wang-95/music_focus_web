@@ -21,6 +21,18 @@ function scroll_load(list_element, list_data, item_template, template_func) {
     }
 }
 
+function scroll_to_view_position(cookie_prefix, interval = 100, scroll_times = 10) {
+    let is_success = new ViewPosition(cookie_prefix).scroll_to();
+    if (!is_success) {
+        $(document).scrollTop(20000);  // 滑到当前最底
+        setTimeout(function () {
+            if (scroll_times > 0) {
+                scroll_to_view_position(cookie_prefix, interval, scroll_times - 1);
+            }
+        }, interval);
+    }
+}
+
 class ViewPosition {
     constructor(cookie_prefix = '') {
         this._cookie_key = cookie_prefix + '_view_position';
@@ -31,12 +43,21 @@ class ViewPosition {
     }
 
     get() {
-        return $.cookie(this._cookie_key) !== null ? XpathUtil.get_ele($.cookie(this._cookie_key)) : null
+        let xpath = $.cookie(this._cookie_key);
+        return this.has() ? XpathUtil.get_ele(xpath) : null
+    }
+
+    has() {
+        return typeof $.cookie(this._cookie_key) !== 'undefined'
     }
 
     scroll_to() {
         let ele = this.get();
-        if (ele !== null) $(ele)[0].scrollIntoView();
+        if (ele !== null) {
+            $(ele)[0].scrollIntoView();
+        }
+        // session内找到了访问记录，但是因为懒加载没找到之前的元素，返回false，表示滑动失败
+        return !(this.has() && ele === null);
     }
 
 }
@@ -62,4 +83,11 @@ class XpathUtil {
     static get_ele(xpath) {
         return document.evaluate(xpath, document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue;
     }
+}
+
+function get_url_param(name) {
+    let regex = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+    let result = window.location.search.substr(1).match(regex);
+    if (result != null) return decodeURI(result[2]);
+    return null;
 }

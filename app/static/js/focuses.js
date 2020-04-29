@@ -4,7 +4,7 @@ function render_focuses(music_type) {
     $.getJSON("/api/v1/focuses", {"music_type": music_type}, function (data) {
         $.get("/static/templates/focus_item.html", function (focus_template) {
             scroll_load($("#focus_list")[0], data['result'][music_type], focus_template, template_func);
-            new ViewPosition('focus').scroll_to();
+            scroll_to_view_position(get_url_param("music_type") + '_focus', 100);
         });
     });
 }

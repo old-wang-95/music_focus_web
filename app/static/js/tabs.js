@@ -82,11 +82,3 @@ function transform_text(cn_text) {
             return "video"
     }
 }
-
-
-function get_url_param(name) {
-    let regex = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
-    let result = window.location.search.substr(1).match(regex);
-    if (result != null) return decodeURI(result[2]);
-    return null;
-}
