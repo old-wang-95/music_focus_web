@@ -31,7 +31,9 @@ def call_videos():
 def show_visit_cnt():
     result = {
         'visit_cnt': visit_history.visit_cnt,
-        'visitor_cnt': visit_history.visitor_cnt
+        'visitor_cnt': visit_history.visitor_cnt,
+        'today_visit_cnt': visit_history.today_visit_cnt,
+        'today_visitor_cnt': visit_history.today_visitor_cnt
     }
     return json.dumps(result, ensure_ascii=False, indent=2)
 
