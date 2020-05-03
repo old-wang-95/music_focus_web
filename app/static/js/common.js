@@ -1,4 +1,4 @@
-function scroll_load(list_element, list_data, item_template, template_func) {
+function scroll_load(list_element, list_data, item_template, template_func, callback = null) {
     list_element.innerHTML = '';
     let index = 0;
     render_items(10);
@@ -18,6 +18,10 @@ function scroll_load(list_element, list_data, item_template, template_func) {
             item_size--;
             index++;
         }
+    }
+
+    if (callback !== null) {
+        callback();
     }
 }
 
