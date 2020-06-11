@@ -2,6 +2,7 @@ function load_bottom() {
     $('#bottom_buttons').load('/static/templates/bottom_buttons.html');
     register_feedback();
     register_subscribe();
+    load_icp();
 }
 
 
@@ -57,5 +58,12 @@ function register_subscribe() {
             $this.css('display', 'block');
             $modal_dialog.css({'margin-top': Math.max(0, ($(window).height() - $modal_dialog.height()) / 2)});
         });
+    })
+}
+
+/* 添加备案信息 */
+function load_icp() {
+    $.get('/static/templates/icp.html', function (icp) {
+        $("body").append(icp);
     })
 }
